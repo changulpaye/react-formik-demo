@@ -1,3 +1,5 @@
+import { MenuItem } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import React from "react";
 import * as Yup from "yup";
 import AppForm from "./common/AppForm";
@@ -61,18 +63,18 @@ const Register = () => {
       />
 
       <FormSelect label="Select Gender" name="gender">
-        <option value={""}>Select</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
+        <MenuItem value={""}>Select</MenuItem>
+        <MenuItem value="male">Male</MenuItem>
+        <MenuItem value="female">Female</MenuItem>
       </FormSelect>
 
       <FormCheckbox name="acceptedTerms">
         I accept the terms and conditions
       </FormCheckbox>
 
-      <button className="btn-primary" type="submit">
-        Submit
-      </button>
+      <Button variant="contained" color="primary" type="submit">
+        Register
+      </Button>
     </AppForm>
   );
 };

@@ -1,3 +1,4 @@
+import { TextField } from "@material-ui/core";
 import { useField } from "formik";
 import React from "react";
 
@@ -9,14 +10,14 @@ const FormInput = ({ label, ...props }) => {
   // message if the field is invalid and it has been touched (i.e. visited)
 
   const [field, meta] = useField(props);
-  console.log(meta);
 
   return (
     <div className="form-control">
       <label htmlFor={props.id || props.name}>{label}</label>
 
-      <input className="text-input" {...field} {...props} />
+      {/* <input className="text-input" {...field} {...props} /> */}
 
+      <TextField {...field} {...props} variant="outlined" />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
