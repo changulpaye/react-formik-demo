@@ -1,20 +1,22 @@
+import { FormControl, InputLabel, Select } from "@material-ui/core";
 import { useField } from "formik";
 import React from "react";
 
-const FormSelect = ({ label, ...props }) => {
+const FormSelects = ({ label, children, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
-    <div>
-      <label htmlFor={props.id || props.name}>{label}</label>
+    <FormControl variant="outlined" className="mt-10">
+      <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
 
-      <select {...field} {...props} className="my-select" />
-
+      <Select {...field} {...props} label={label}>
+        {children}
+      </Select>
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
-    </div>
+    </FormControl>
   );
 };
 
-export default FormSelect;
+export default FormSelects;

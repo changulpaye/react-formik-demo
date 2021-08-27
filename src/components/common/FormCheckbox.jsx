@@ -1,3 +1,4 @@
+import { Checkbox, FormControlLabel } from "@material-ui/core";
 import { useField } from "formik";
 import React from "react";
 
@@ -14,12 +15,10 @@ const FormCheckbox = ({ children, ...props }) => {
 
   return (
     <div>
-      <label className="checkbox-input">
-        <input type="checkbox" {...field} {...props} />
-
-        {children}
-      </label>
-
+      <FormControlLabel
+        control={<Checkbox color="primary" {...field} {...props} />}
+        label={children}
+      />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
