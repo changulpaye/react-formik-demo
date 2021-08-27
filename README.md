@@ -1,2 +1,3 @@
 # react-formik-demo
-Created with CodeSandbox
+- Reusable React Formik library Component
+- Material UI component for look and feel.
